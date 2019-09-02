@@ -1,0 +1,29 @@
+<!--<h2>{{pokemon.name | uppercase}} Detailes</h2>
+<div><span>図鑑ナンバー:</span>{{pokemon.id}}</div>
+<div><span>名前:</span>{{pokemon.name}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="pokemon.name" placeholder="name"/>
+  </label>
+</div>-->
+<h2>ポケモン一覧</h2>
+<!--<div *ngIf="selectedPokemon">
+<h2>{{selectedPokemon.name | uppercase}}を選択した
+</h2>
+<app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
+<div>
+  <label>
+    <input [(ngModel)]="selectedPokemon.name" plaseholder="name"/>
+  </label>
+</div>
+</div>
+-->
+<app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
+
+<ul class="pokemons">
+  <li *ngFor="let pokemon of pokemons" [class.selected]="pokemon===selectedPokemon"(click)="onSelect(pokemon)">
+    <span class="badge">{{pokemon.id}}</span>{{pokemon.name}}
+  </li>
+</ul>
+
+
